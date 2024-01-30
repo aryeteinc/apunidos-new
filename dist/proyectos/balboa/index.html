@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/logoweb.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Astro v2.0.13">
+    <title>Balboa Campestre</title>
+<link rel="stylesheet" href="/scripts/index.50594a14.css" />
+<link rel="stylesheet" href="/scripts/index.8b099b7f.css" /><script type="module" src="/scripts/hoisted.49ae5e7d.js"></script>
+<script type="module" src="/scripts/page.938b9eea.js"></script></head>
+<body class="text-slate-600 bg-white  dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800 dark:text-slate-400">
+    <header class="">
+    <!-- <nav x-data="{ isOpen: false }" class="relative bg-white shadow dark:bg-gray-900">
+        <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+            <div class="flex items-center justify-between">
+                <a class="text-slate-900 text-xl font-bold text-left dark:text-white" href="/">AP
+                    <span class="text-slate-700 dark:text-gray-300">Unidos</span>
+                    <small class="block text-xs text-slate-700 -mt-2 dark:text-gray-300">
+                        {slogan}
+                    </small>
+                </a>
+    
+                <!-- Mobile menu button -->
+                <!-- <div class="flex lg:hidden">
+                    <button x-cloak x-on:click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                        </svg>
+                
+                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div> -->
+            <!-- </div> -->
+    
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <!-- <div x-cloak x-bind:class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+                <div class="flex flex-col md:flex-row md:mx-6">
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/proyectos">Proyectos</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Empresa</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/politicas-de-tratamiento-de-datos">Legal</a>                    
+                </div>
+    
+                <div class="flex justify-center md:block">
+                    <a href="#" class="bg-gradient-to-r from-sky-500 to-indigo-500 py-2 px-4 rounded text-white font-semibold">Pagos</a>
+                </div>
+            </div> -->
+        <!-- </div>
+    </nav> --> 
+
+
+
+    <nav x-data="{ isOpen: false }" class="relative bg-white shadow dark:bg-gray-900">
+        <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex flex-col items-start m-0 p-0">
+                    <img class="w-auto h-12 md:h-14 m-0 p-0" src="/scripts/logo_wo_slogan.e6a96801.png" alt="">
+                    <small class="block text-xs text-slate-700 -mt-4 md:-mt-4 dark:text-gray-300">
+                        Ofrecemos Experiencias Arquitectonicas
+                    </small>
+                </a>              
+    
+                <!-- Mobile menu button -->
+                <div class="flex lg:hidden">
+                    <button x-cloak x-on:click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"></path>
+                        </svg>
+                
+                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div x-cloak x-bind:class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+                <div class="flex flex-col md:flex-row md:mx-6">
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-400 md:mx-4 md:my-0" href="/proyectos">Proyectos</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-400 md:mx-4 md:my-0" href="/acerca-de-nosotros">Empresa</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200        hover:text-gray-500 dark:hover:text-gray-400 md:mx-4 md:my-0" href="https://noticias.apunidos.com/">Noticias
+                    </a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-400 md:mx-4 md:my-0" href="/politicas-de-tratamiento-de-datos">Legal</a>                   
+                </div>
+    
+                <div class="flex justify-left md:block">
+                    <a class="relative bg-gradient-to-r from-sky-500 to-indigo-500 py-2 px-4 rounded text-white font-semibold" href="https://apunidos.com/commerce/index.html">
+                        Pagos    
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+
+</header>
+    <style>astro-island,astro-slot{display:contents}</style><script>(self.Astro=self.Astro||{}).load=a=>{(async()=>await(await a())())()},window.dispatchEvent(new Event("astro:load"));var l;{const c={0:t=>t,1:t=>JSON.parse(t,o),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,o)),5:t=>new Set(JSON.parse(t,o)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(JSON.parse(t)),9:t=>new Uint16Array(JSON.parse(t)),10:t=>new Uint32Array(JSON.parse(t))},o=(t,s)=>{if(t===""||!Array.isArray(s))return s;const[e,n]=s;return e in c?c[e](n):void 0};customElements.get("astro-island")||customElements.define("astro-island",(l=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement&&this.parentElement.closest("astro-island[ssr]"))return;const s=this.querySelectorAll("astro-slot"),e={},n=this.querySelectorAll("template[data-astro-template]");for(const r of n){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(const r of s){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("name")||"default"]=r.innerHTML)}const a=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),o):{};this.hydrator(this)(this.Component,a,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((s,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate);let s=this.getAttribute("before-hydration-url");s&&await import(s),this.start()}start(){const s=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(`astro:${e}`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const n=this.getAttribute("renderer-url"),[a,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(const d of i.split("."))this.Component=this.Component[d]}return this.hydrator=r,this.hydrate},s,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},l.observedAttributes=["props"],l))}</script><div class="w-full bg-center bg-cover h-[18rem] md:h-[28rem]" style="background-image: url(https://i.ibb.co/m4bmk22/rm1.webp);">
+        <div class="
+        flex 
+        items-center 
+        justify-center 
+        w-full h-full 
+        bg-gray-900/40">
+            <div class="text-center">
+                <h1 class="text-3xl font-semibold text-white lg:text-6xl">BALBOA CAMPESTRE</h1>
+                <div class="w-full px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-apsky rounded-md lg:w-auto hover:bg-regal-blue focus:outline-none focus:bg-blue-500">Proyecto Finalizado</div>
+            </div>
+        </div>
+    </div><main class="container max-w-5xl mx-auto my-5 text-justify">
+        <article>
+            <h2 class="title-h2">BALBOA CAMPESTRE</h2>
+            <div class="flex flex-col items-center p-8">
+                <img class=" object-scale-down object-center w-32 h-32 rounded-md  " src="https://i.ibb.co/gJKnnvM/logo-balboa.webp" alt="">
+                <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">Conjunto Cerrado</h1>
+                <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">Puerto Colombia - cra 18c #2-59</p>
+                <div class="flex justify-center gap-4 items-center"> 
+                    <p>
+    
+</p>  
+                    <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200 ">
+                        <svg viewBox="0 0 512 512" class="w-6 h-6 fill-current" astro-icon="cil:flip-to-back"><path fill="currentColor" d="M64 496h336v-32H64a16.019 16.019 0 0 1-16-16V120H16v328a48.055 48.055 0 0 0 48 48zM464 368h32v32h-32z"/><path fill="currentColor" d="M173.091 368h29.091v32h-29.091zM405.818 368h29.091v32h-29.091zM231.272 368h29.091v32h-29.091zM289.455 368h29.091v32h-29.091zM347.637 368h29.091v32h-29.091zM112 368h32v32h-32zM112 135.272h32v29.091h-32zM112 77.091h32v29.091h-32zM112 309.818h32v29.091h-32zM112 251.637h32v29.091h-32zM112 193.455h32v29.091h-32zM112 16h32v32h-32zM289.454 16h29.091v32h-29.091zM231.272 16h29.091v32h-29.091zM405.818 16h29.091v32h-29.091zM173.091 16h29.091v32h-29.091zM347.637 16h29.091v32h-29.091zM464 16h32v32h-32zM464 309.818h32v29.091h-32zM464 77.091h32v29.091h-32zM464 193.454h32v29.091h-32zM464 135.272h32v29.091h-32zM464 251.637h32v29.091h-32z"/></svg> <h1 class="px-2 text-sm">134 Mt2</h1>
+                      </div>
+                </div>
+            </div>  
+
+            <section class="
+            flex 
+            flex-col 
+            items-center 
+            justify-between 
+            border-solid 
+            border-b-2 
+            border-slate-100 
+            mb-4
+            md:flex-row
+            md:mx-5">                
+                
+                <span class="text-xl md:text-3xl text-slate-400 font-extrabold hidden">                    
+                    Desde: $0
+                </span>
+            </section>            
+            <p class="mx-5">
+                Balboa Campestre se encuentra ubicada en Puerto Colombia - Cra 18c #2-59, en una de zona de alta valorización y crecimiento de la región turística de la Costa Caribe Colombiana, en la zona de Bajo Ostión a 2 km del peaje de Puerto Colombia, vía al mar Cartagena – Barranquilla.
+            </p>
+        </article>  
+        
+        <!-- Amenities Section -->
+
+        <section class="flex justify-center">
+            <div class="container px-2 py-4 mx-0">
+                <div class="
+                grid 
+                grid-cols-2 
+                gap-2 
+                mx-8
+                text-xs
+                text-center
+                place-content-center
+                md:grid-cols-3 
+                md:items-stretch                       
+                md:text-sm
+                lg:grid-cols-4 
+                 
+                ">
+                    <div class="flex justify-start items-start text-left">                
+    <svg viewBox="0 0 512 512" class="w-6 h-6 fill-current mr-4" astro-icon="cil:swimming"><path fill="currentColor" d="M223.308 137.5a16.051 16.051 0 0 1 17.922 3.029l32.883 35.171-102.055 90.043c9.554 1.9 16.308 5.041 22.132 7.758 7.78 3.631 13.925 6.5 27.517 6.5s19.738-2.868 27.519-6.5l.154-.072a173.415 173.415 0 0 0 41.417-27.1l27.048-23.866 52.9 56.573c6.179-1.137 10.561-3.17 15.624-5.532a99.961 99.961 0 0 1 16.907-6.533L264.388 118.444l-.373-.385a48.151 48.151 0 0 0-54.239-9.555l-64.542 30.12 13.532 29z"/><circle cx="372" cy="132" r="36" fill="currentColor"/><path fill="currentColor" d="M427.425 376c-20.693 0-31.983 5.268-41.053 9.5-7.782 3.631-13.928 6.5-27.523 6.5s-19.739-2.868-27.52-6.5c-9.071-4.232-20.359-9.5-41.052-9.5s-31.981 5.269-41.051 9.5c-7.781 3.631-13.926 6.5-27.519 6.5s-19.737-2.868-27.517-6.5c-9.07-4.232-20.358-9.5-41.05-9.5s-31.981 5.269-41.051 9.5c-7.781 3.631-13.926 6.5-27.519 6.5s-19.738-2.868-27.519-6.5C47.981 381.269 36.692 376 16 376v32c13.593 0 19.738 2.868 27.519 6.5 9.07 4.232 20.359 9.5 41.051 9.5s31.981-5.269 41.051-9.5c7.781-3.631 13.926-6.5 27.519-6.5s19.737 2.868 27.517 6.5c9.07 4.232 20.358 9.5 41.05 9.5s31.981-5.269 41.051-9.5c7.781-3.631 13.927-6.5 27.519-6.5s19.739 2.868 27.52 6.5c9.071 4.232 20.359 9.5 41.052 9.5s31.983-5.268 41.054-9.5c7.781-3.631 13.928-6.5 27.522-6.5s19.741 2.868 27.521 6.5c9.072 4.233 20.361 9.5 41.054 9.5v-32c-13.594 0-19.741-2.868-27.521-6.5-9.072-4.232-20.361-9.5-41.054-9.5zM493.3 311.957c-11.741-.359-17.576-3.075-24.82-6.456-8.666-4.044-19.376-9.02-38.353-9.458-.889-.02-1.775-.043-2.7-.043s-1.812.023-2.7.043c-18.977.438-29.688 5.414-38.352 9.458-7.246 3.381-13.08 6.1-24.822 6.456-.869.026-1.764.043-2.7.043s-1.832-.017-2.7-.043c-11.741-.359-17.575-3.075-24.819-6.456-8.665-4.043-19.375-9.019-38.351-9.458-.889-.02-1.774-.043-2.7-.043s-1.811.023-2.7.043c-18.976.438-29.687 5.415-38.351 9.458-7.244 3.381-13.078 6.1-24.818 6.456-.869.026-1.764.043-2.7.043s-1.831-.017-2.7-.043c-11.739-.359-17.573-3.075-24.816-6.456-8.664-4.043-19.374-9.02-38.349-9.458a93.277 93.277 0 0 0-1.95-.033c-.255 0-.5-.012-.753-.012-.926 0-1.812.023-2.7.043-18.975.438-29.686 5.415-38.35 9.458-7.245 3.381-13.078 6.1-24.818 6.456-.869.026-1.764.043-2.7.043s-1.831-.017-2.7-.043C70.13 311.6 64.3 308.882 57.051 305.5c-8.664-4.043-19.374-9.02-38.35-9.458-.889-.02-1.775-.043-2.7-.043v32c13.593 0 19.738 2.868 27.519 6.5 9.07 4.232 20.359 9.5 41.051 9.5s31.981-5.269 41.051-9.5c7.781-3.631 13.926-6.5 27.519-6.5s19.737 2.868 27.517 6.5c9.07 4.232 20.358 9.5 41.05 9.5s31.981-5.269 41.051-9.5c7.781-3.631 13.927-6.5 27.519-6.5s19.739 2.868 27.52 6.5c9.071 4.232 20.359 9.5 41.052 9.5s31.983-5.268 41.054-9.5c7.781-3.631 13.928-6.5 27.522-6.5s19.741 2.868 27.521 6.5c9.072 4.233 20.361 9.5 41.054 9.5V312c-.938 0-1.833-.017-2.701-.043z"/></svg>
+    <h1 class="text-md font-semibold text-gray-800 dark:text-white">Piscina - Piscina Niños</h1>
+</div><div class="flex justify-start items-start text-left">                
+    <svg viewBox="0 0 512 512" class="w-6 h-6 fill-current mr-4" astro-icon="cil:garage"><path fill="currentColor" d="M448 255.454h-.511L407.067 164.5A48.044 48.044 0 0 0 363.2 136H148.8a48.043 48.043 0 0 0-43.863 28.5l-40.426 90.954H64a32.036 32.036 0 0 0-32 32v112a32.036 32.036 0 0 0 32 32V472a24.028 24.028 0 0 0 24 24h56a24.028 24.028 0 0 0 24-24v-40.546h176V472a24.028 24.028 0 0 0 24 24h56a24.028 24.028 0 0 0 24-24v-40.546a32.036 32.036 0 0 0 32-32v-112a32.036 32.036 0 0 0-32-32zM134.175 177.5A16.013 16.013 0 0 1 148.8 168h214.4a16.014 16.014 0 0 1 14.621 9.5l34.646 77.953H99.529zM136 464H96v-32.546h40zm280 0h-40v-32.546h40zm32-64.546H64v-112h384z"/><path fill="currentColor" d="M96 328h80v32H96zM336 328h80v32h-80zM256 14.758 16 111.121v34.483l240-96.362 240 96.362v-34.483L256 14.758z"/></svg>
+    <h1 class="text-md font-semibold text-gray-800 dark:text-white">Parqueaderos Visitantes - Privados</h1>
+</div><div class="flex justify-start items-start text-left">                
+    <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current mr-4" astro-icon="iconoir:video-camera"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12v4.4a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6V7.6a.6.6 0 0 1 .6-.6h10.8a.6.6 0 0 1 .6.6V12zm0 0 5.016-4.18a.6.6 0 0 1 .984.461v7.438a.6.6 0 0 1-.984.46L15 12z"/></svg>
+    <h1 class="text-md font-semibold text-gray-800 dark:text-white">Video Porteria</h1>
+</div><div class="flex justify-start items-start text-left">                
+    <svg viewBox="0 0 512 512" class="w-6 h-6 fill-current mr-4" astro-icon="cil:leaf"><path fill="currentColor" d="M389.053 126.3A302.909 302.909 0 0 0 280.012 18.15L272 13.516l-8.012 4.634A301.084 301.084 0 0 0 113.4 279.042c0 3.445.06 6.944.177 10.4 1.592 46.856 19.511 86.283 51.82 114.018 24.724 21.225 56.438 34.182 90.607 37.273V496h32V240H256v168.528c-54.064-6.263-107.873-44.455-110.444-120.174-.106-3.095-.16-6.228-.16-9.312A270.286 270.286 0 0 1 272 50.673a270.286 270.286 0 0 1 126.6 228.369c0 3.084-.054 6.217-.16 9.313-2.056 60.573-36.907 97.127-78.444 112.536v33.867a156.188 156.188 0 0 0 58.607-31.3c32.309-27.735 50.228-67.162 51.82-114.017.117-3.456.177-6.955.177-10.4A300.948 300.948 0 0 0 389.053 126.3z"/></svg>
+    <h1 class="text-md font-semibold text-gray-800 dark:text-white">Zonas Verdes</h1>
+</div>
+                </div>
+            </div>
+        </section> 
+
+
+        
+
+
+        <section class="">
+            <div class="container px-6 py-10 mx-auto">
+                <h2 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white text-center">GALERÍA</h2>
+                <div class="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2 md:mt-16 md:grid-cols-3 lg:grid-cols-4">
+                    <div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/RTw2VGS/bb1.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/RTw2VGS/bb1.webp" alt="">   
+                            </a>                        
+                        </div><div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/kDxYTDK/bb3.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/kDxYTDK/bb3.webp" alt="">   
+                            </a>                        
+                        </div><div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/XtCDx68/bb2.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/XtCDx68/bb2.webp" alt="">   
+                            </a>                        
+                        </div><div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/JvvXRJX/bb7.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/JvvXRJX/bb7.webp" alt="">   
+                            </a>                        
+                        </div><div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/bLK4wsv/bb5.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/bLK4wsv/bb5.webp" alt="">   
+                            </a>                        
+                        </div><div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/86jGCMJ/bb4.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/86jGCMJ/bb4.webp" alt="">   
+                            </a>                        
+                        </div><div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/m4bmk22/rm1.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/m4bmk22/rm1.webp" alt="">   
+                            </a>                        
+                        </div><div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/w7vWWH0/Balboa-index.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/w7vWWH0/Balboa-index.webp" alt="">   
+                            </a>                        
+                        </div><div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/0qZP5sM/balboa-Inicio.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/0qZP5sM/balboa-Inicio.webp" alt="">   
+                            </a>                        
+                        </div><div class="lg:flex">
+                            <a data-fslightbox="gallery" href="https://i.ibb.co/qsmnkCR/bb8.webp">
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src="https://i.ibb.co/qsmnkCR/bb8.webp" alt="">   
+                            </a>                        
+                        </div>                    
+                </div>                
+            </div>
+
+            <div class="hidden container px-6 py-10 mx-auto">
+                <h2 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white text-center"></h2>
+
+                <div class="w-full h-100">
+                    <a data-fslightbox="planos">
+                        <img class="object-cover w-full h-auto rounded-lg " alt="">   
+                    </a>                                           
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 mt-8 justify-items-center sm:grid-cols-2 md:mt-16 md:grid-cols-3 lg:grid-cols-0">
+                                       
+                </div>                
+            </div>
+
+
+            <iframe class="flex justify-center w-full px-4 h-96  rounded hidden" title="Balboa Campestre" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            </iframe>           
+        </section>
+
+
+        
+
+        <div class="flex flex-col mx-2 px-0 md:mx-6 md:px-3 lg:mx-12 lg:px-6 md:grid md:grid-cols-3 md:grid-flow-col gap-4">
+            <div class="row-span-3 my-4">
+                <div class="py-4">
+                    <h2 class="mt-2 text-xl font-semibold text-gray-800 text-center 
+                    md:text-2xl   
+                    lg:text-3xl
+                    dark:text-white">
+                        QUIERES SABER MÁS
+                    </h2>
+                    <p class="font-medium text-center">Ponganse en Contácto</p>       
+        
+                    <p class="mt-3 text-gray-500 dark:text-gray-400 text-center">
+                        Nuestro equipo estará para resolver cualquier pregunta.
+                    </p>
+                </div>
+
+                <div class="flex flex-col mx-4 text-center  gap-12 md:grid-cols-2 lg:grid-cols-1">
+                    <div>
+                        <span class="inline-block p-3 text-regal-blue bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                            </svg>
+                        </span>
+    
+                        <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Nuestro equipo esta aquí para ayudarlo.</p>
+                        <p class="mt-2 text-sm">info@apinidos.com</p>
+                    </div>
+    
+                    <div>
+                        <span class="inline-block p-3 text-regal-blue bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
+                            </svg>
+                        </span>
+                        
+                        <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Oficina</h2>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Ven a nuestras oficina y dejanos atenderte personalmente.</p>
+                        <p class="mt-2 text-sm ">Calle 2 No 18 B 06 Pradomar, Puerto Colombia , Atlántico</p>
+                    </div>
+    
+                    <div>
+                        <span class="inline-block p-3 text-regal-blue bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"></path>
+                            </svg>
+                        </span>
+                        
+                        <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Telefono</h2>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Lunes-Viernes de 8:00am a 5:30pm, Sábados 9:00am a 12:00m</p>
+                        <p class="mt-2 text-sm ">5-3095593 - (310) 440 7029</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 mx-4 my-8">
+                <div class="overflow-hidden rounded-lg lg:col-span-2 h-auto">
+                    <h2 class="
+                    mt-2 
+                    text-xl 
+                    font-semibold 
+                    text-gray-800
+                    text-center 
+                    md:text-left 
+                    md:text-2xl 
+                    lg:text-3xl                     
+                    dark:text-white">
+                        ASESOR(ES)
+                    </h2>
+                    <div class="flex flex-col justify-center mt-8  gap-4  sm:flex-row md:justify-between">
+                        <div class="flex justify-evenly items-center gap-x-2">
+                                        <img class="object-cover w-16 h-16 rounded-full" src="https://i.ibb.co/0qKJXFM/Eliana.webp" alt="">
+                                    
+                                        <div>
+                                            <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Eliana Palacio
+                                                <span class="block text-xs text-gray-500">Gerente General</span>
+                                                </h1>
+                                
+                                            <p class="text-base text-gray-500 dark:text-gray-400">info@apunidos.com</p>
+                                        </div>
+                                    </div>                           
+                    </div>                    
+                </div>
+            </div>
+            <astro-island uid="ZCCLdv" component-url="/scripts/FormContact.84f270af.js" component-export="default" renderer-url="/scripts/client.0610a945.js" props="{&quot;nameProject&quot;:[0,&quot;Balboa Campestre&quot;]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;FormContact&quot;,&quot;value&quot;:true}" await-children=""><div class="row-span-2 col-span-2 mx-2"><div class="px-2 w-full rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8"><h2 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white text-center my-5 ">Contáctanos</h2><form class="w-full"><div class="-mx-2 md:items-center md:flex"><div class="flex-1 px-2"><label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Nombre</label><input type="text" placeholder="John " class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" name="name" required="" value=""/></div><div class="flex-1 px-2 mt-4 md:mt-0"><label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Apellido</label><input type="text" placeholder="Doe" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" name="lastname" value=""/></div></div><div class="mt-4"><label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email</label><input type="email" placeholder="johndoe@example.com" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" name="email" required="" value=""/></div><div class="w-full mt-4"><label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Mensaje</label><textarea class="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-200 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="p.e: Quiero saber mas de Balboa Campestre" name="message" required=""></textarea></div><input type="hidden" name="nameProject" value="Balboa Campestre"/><button class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-apsky rounded-lg hover:bg-regal-blue focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">Envia tu Mensaje</button></form></div></div></astro-island>
+        </div>        
+        
+
+        <div class="row-span-2 col-span-2 mx-2 my-4 ">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.4744943423148!2d-74.95052308517565!3d11.002981892168014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42b5335a12b07%3A0x56c9b7771cc45f8e!2sBalboa%20Campestre!5e0!3m2!1ses-419!2sus!4v1679811655151!5m2!1ses-419!2sus&#34; width=&#34;600&#34; height=&#34;450&#34; style=&#34;border:0;&#34; allowfullscreen=&#34;&#34; loading=&#34;lazy&#34; referrerpolicy=&#34;no-referrer-when-downgrade&#34;></iframe> width=&#34;600&#34; height=&#34;450&#34; style=&#34;border:0;&#34; allowfullscreen=&#34;&#34; loading=&#34;lazy&#34; referrerpolicy=&#34;no-referrer-when-downgrade&#34;></>&#34; width=&#34;600&#34; height=&#34;450&#34; style=&#34;border:0;&#34; allowfullscreen=&#34;&#34; loading=&#34;lazy&#34; referrerpolicy=&#34;no-referrer-when-downgrade&#34;></>&#34; width=&#34;600&#34; height=&#34;450&#34; style=&#34;border:0;&#34; allowfullscreen=&#34;&#34; loading=&#34;lazy&#34; referrerpolicy=&#34;no-referrer-when-downgrade" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>       
+
+        <section class="">            
+            <div class="container px-6 py-6 mx-auto">                   
+                <div class="
+                flex 
+                flex-col 
+                justify-center 
+                items-center 
+                mt-5 
+                mx-auto
+                
+                ">
+                    <h2 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white text-center my-5 ">
+                        
+                    </h2>
+                    <div class="
+                    flex 
+                    flex-col 
+                    gap-4  
+                    md:grid 
+                    md:grid-cols-2 
+                    md:gap-4 
+                    lg:flex 
+                    lg:flex-row">                            
+                            
+                        </div>
+                    </div>
+                </div>            
+        </section>
+    </main>
+    
+    
+    <footer class="py-10 w-full bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
+    <section class="flex flex-col justify-center items-center md:flex-row md:justify-around space-y-8">
+      <div class="text-center md:order-first md:w-1/3">
+        <div class="">
+          <div>             
+              <a href="/proyectos" class="block mt-2 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                  Proyectos
+              </a>
+              <a href="/acerca-de-nosotros" class="block mt-2 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                  Empresa
+              </a>
+              <a href="https://noticias.apunidos.com/" class="block mt-2 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                  Noticias
+              </a>
+              <a href="/politicas-de-tratamiento-de-datos" class="block mt-2 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                Legal
+            </a>
+
+            <a class="block text-indigo-500 py-2 px-4 rounded  font-semibold" href="https://apunidos.com/commerce/index.html">
+              Pagos    
+              
+          </a>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-center items-center text-center order-first md:w-1/3">
+          <p class="text-xl">APUNIDOS SAS</p>  
+          <p>Calle 2 No 18 B 06 Pradomar, Puerto Colombia, Atlántico.</p>
+          <p>5-3095593  –  (310)440-7029</p>
+          <p>info@apunidos.com</p>
+          <small>&copy; 2024 APUNIDOS SAS</small>
+          
+      </div>
+
+      <div class="text-center md:w-1/3">
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup" class="md:w-1/2">
+          <form action="https://apunidos.us7.list-manage.com/subscribe/post?u=3c8739b928faada613af4f541&id=ea94b6e9b1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll" class="text-center">
+                  <h2>Suscríbete a nuestro Newsletter</h2>
+                  <div class="indicates-required"><span class="asterisk"></span></div>
+                  <div class="mc-field-group text-left">
+                      <label for="mce-EMAIL">Email <span class="asterisk">*</span></label>
+                      <input type="email" value="" name="EMAIL" class="required email border border-regal-blue rounded-lg" id="mce-EMAIL">
+                  </div>
+                  <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3c8739b928faada613af4f541_ea94b6e9b1" tabindex="-1" value=""></div>
+                  <div class="clear">
+                    <input type="submit" value="Suscríbirse" name="subscribe" id="mc-embedded-subscribe" class="button 
+                          bg-apsky 
+                          w-40 h-10 
+                          rounded 
+                          my-4
+                          transition ease-in-out delay-100 hover:text-apsky hover:bg-regal-blue    duration-300
+                          text-regal-blue  cursor-pointer ring-regal-blue ring-1"></div>
+              </div>
+          </form>
+      </div>
+      <!--End mc_embed_signup-->
+        <!-- <FormContact /> -->
+      </div>
+
+    </section>
+
+    <section class="flex justify-center gap-5"> 
+      <a href="https://www.facebook.com/APunidosconstru/" target="_blank">
+        <svg viewBox="0 0 320 512" class="w-6 h-6 fill-current" astro-icon="fa-brands:facebook-f"><path fill="currentColor" d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg> 
+      </a>     
+      <a href="https://api.whatsapp.com/send?phone=573104407029&text=Cordial%20saludo%21" target="_blank">
+        <svg viewBox="0 0 448 512" class="w-6 h-6 fill-current" astro-icon="fa-brands:whatsapp"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/channel/UC3NVZFgXcocHPMGGr3rrQIw" target="_blank">       
+        <svg viewBox="0 0 576 512" class="w-6 h-6 fill-current" astro-icon="fa-brands:youtube"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/apunidos_constructora/" target="_blank">
+        <svg viewBox="0 0 448 512" class="w-6 h-6 fill-current" astro-icon="fa-brands:instagram"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg> 
+      </a>
+    </section>
+  </footer>
+</body></html>

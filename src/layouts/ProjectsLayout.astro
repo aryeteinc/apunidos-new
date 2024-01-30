@@ -1,0 +1,31 @@
+---
+import "@fontsource/merriweather";
+import "@fontsource/nunito";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CardProperty from "../components/CardProperty.astro";
+
+import { Company } from "../data/Company";
+const {slogan} = Company;
+const {title} = Astro.props;
+
+import '../base.css';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/logoweb.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content={Astro.generator} />
+    <title>{ title || "APUnidos SAS" }</title>
+</head>
+<body class="text-slate-600 bg-white  dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800 dark:text-slate-400">
+    <Header slogan={slogan}/>
+    <slot/>
+    
+    
+    <Footer Company={Company}/>
+</body>
+</html>

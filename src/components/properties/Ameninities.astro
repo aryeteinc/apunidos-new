@@ -1,0 +1,9 @@
+---
+import { Icon } from 'astro-icon';
+const {name, quantity, icon} = Astro.props
+---
+
+<div class="flex justify-start items-start text-left">                
+    <Icon class="w-6 h-6 fill-current mr-4" name={icon} />
+    <h1 class="text-md font-semibold text-gray-800 dark:text-white">{name}</h1>
+</div>          

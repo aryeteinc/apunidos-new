@@ -1,0 +1,86 @@
+---
+import { Icon } from 'astro-icon';
+import {ToCurrency} from '../utils/formatCurrency';
+import Sala from '../img/Sala.jpg';
+import AmenitiesInteriors from './AmenitiesInteriors.astro';
+
+
+const { name, tags,price,address,area,slogan,slug,imageMain,amenitiesInteriors} = Astro.props
+
+let areaOculto = area
+? ''
+: 'hidden'
+
+let priceOculto = ToCurrency(price).split('.')[0] !== '$0' ? 'py-2' : 'hidden' 
+
+
+---
+<div class="hidden max-w-sm rounded overflow-hidden shadow-lg bg-slate-50 
+transition duration-300 ease-in-out hover:scale-105 dark:bg-slate-800  dark:highlight-white/5 relative">
+    <img class="w-full z-0" src={Sala.src} alt={name} />
+
+    <div class="px-6 py-2">
+      <div class="font-bold text-2xl dark:text-slate-300">{name}
+        <small class="block text-xs text-lime-700">{slogan}</small>
+      </div>
+      <p class="text-red-500 text-2xl font-black bg-gray-50/50 h-10 w-full text-right dark:text-red-500 absolute top-0 right-0  z-40">        
+        {ToCurrency(price)}
+      </p>
+      <small class="font-serif dark:text-slate-400">{address}</small>
+      <small class="font-serif block dark:text-slate-400">Area:{area}</small>
+    </div>
+
+    <div class="px-6 flex justify-center">
+      {tags.map((tag) => (
+        <span
+        class="inline-block bg-gradient-to-r from-lime-500 to-lime-700 rounded-full px-3 py-1 text-md font-semibold text-white mr-2 mb-2 dark:shadow-md dark:shadow-lime-500/50">
+          {`#${tag}`}
+        </span>
+      ))}      
+    </div>
+
+    <div 
+    class="inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-white py-4 pointer-events-none dark:from-slate-900">
+      <a class="relative bg-slate-900 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 text-sm text-white font-semibold h-12 px-6 rounded-lg flex items-center dark:bg-slate-700 dark:hover:bg-slate-600 pointer-events-auto" href={`/proyectos/${slug}/`}>
+        Conocer más</a>      
+    </div>
+</div>
+
+  <div class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg relative dark:bg-gray-800">
+    <img class="object-cover object-center w-full h-56" src={imageMain} alt="avatar">
+
+    <div class="flex items-left px-4  bg-slate-900">
+        <h1 class={`text-lg font-semibold text-white ${priceOculto}`}>{ToCurrency(price).split('.')[0]}</h1>
+    </div>
+
+    <div class="px-4 py-6 ">
+        <h1 class="text-xl font-semibold text-gray-800 dark:text-white">{name.toUpperCase()}</h1>
+        <section class="flex justify-between items-start">
+          <small class="text-sm italic font-bold text-aplime flex-none">{slogan}</small>
+          <a href={`/proyectos/${slug}/`} class="bg-slate-500 text-white text-center font-medium p-2 rounded mx-2 flex-none w-auto hover:bg-slate-700">Saber más</a>
+        </section>
+        
+
+        <p class="absolute top-0 right-0 p-2 bg-slate-900 opacity-75 text-white w-100 dark:text-gray-400 rounded flex justify-end">          
+          <Icon class="w-4 h-4 fill-current mr-4" name="cil:tags" />
+          <span class="font-md">{tags.join(',')}</span>          
+        </p>
+
+        <div class="flex">
+          <div class="flex items-center mt-2 text-gray-700 dark:text-gray-200">
+            <Icon class="w-6 h-6 fill-current" name="cil:location-pin" />
+            <h1 class="px-2 text-sm">{address}</h1>
+          </div>
+        </div>
+
+        <div class="flex justify-center gap-4 items-center">          
+          <AmenitiesInteriors amenitiesInteriors={amenitiesInteriors}/>         
+
+          <div class={`flex items-center mt-4 text-gray-700 dark:text-gray-200 ${areaOculto}`}>
+            <Icon class="w-6 h-6 fill-current" name="cil:flip-to-back" /> <h1 class="px-2 text-sm">{area}</h1>
+          </div>
+      </div>
+    </div>          
+</div>
+
+  

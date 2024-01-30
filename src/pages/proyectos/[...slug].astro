@@ -1,0 +1,399 @@
+---
+import { Icon } from 'astro-icon';
+import ProjectsLayout from "../../layouts/ProjectsLayout.astro";
+import { Projects } from "../../data/Projects";
+import {ToCurrency} from '../../utils/formatCurrency';
+
+import Ameninities from '../../components/properties/Ameninities.astro';
+import AmenitiesInteriors from "../../components/AmenitiesInteriors.astro";
+import FormContact from '../../components/FormContact';
+//import Galleries from "../../components/properties/Galeries";
+
+import Mapa from "../../components/Mapa";
+
+export async function getStaticPaths() {
+    const pages = []; 
+    Projects.map((
+        {
+            slug,
+            name, 
+            slogan,
+            price,
+            city,
+            address,
+            logo,
+            area,
+            tags,
+            imageMain,
+            imageMain2,
+            body,
+            amenitiesExteriors,
+            amenitiesInteriors,
+            images,
+            mapa,
+            PlanoMapa,
+            asesors,
+            relations,
+            video,
+            Planos
+        }) => {
+        pages.push(
+            {
+                slug: `${slug}`,
+                name,
+                slogan,
+                price,
+                city,
+                address,
+                logo,
+                area,
+                tags,
+                imageMain,
+                imageMain2,
+                body,
+                amenitiesExteriors,
+                amenitiesInteriors,
+                images,
+                mapa,
+                PlanoMapa,
+                asesors,
+                relations,
+                video,
+                Planos
+            }
+        );
+    });
+    return pages.map(({slug, name, slogan,imageMain,imageMain2,body,price,amenitiesExteriors,amenitiesInteriors,tags,images,mapa,PlanoMapa,city, logo,address,area,asesors,relations,video,Planos}) => {
+        return {
+            params: {slug},
+            props : {name,slogan,imageMain,imageMain2,body,price,amenitiesExteriors,amenitiesInteriors,tags,images,mapa,PlanoMapa,city,logo,address,area,asesors,relations,video,Planos},
+        }
+    });
+}
+
+const {name, slogan,imageMain,imageMain2,body,price,amenitiesExteriors,amenitiesInteriors,tags,images,mapa,PlanoMapa,city, logo,address,area, asesors,relations,video,Planos} = Astro.props;
+//const HeroImage = `background-image: url(${imageMain});`
+/*const {bathrooms, bedrooms} = Astro.props.amenitiesExteriors;*/
+const HeroImage = imageMain2 ? `background-image: url(${imageMain2});` : `background-image: url(${imageMain});`;
+
+let priceOculto = ToCurrency(price).split('.')[0] !== '$0' ? '' : 'hidden' 
+let logoOculto  = logo ? '' : 'hidden'
+let areaOculto  = area ? '' : 'hidden'
+let videoOculto  = video ? '' : 'hidden'
+let planosOculto  = Planos ? '' : 'hidden'
+let planos_cantidad = Planos ? Planos : [];
+
+const asesors_limpios = asesors ? asesors: [];
+
+const relations_limpios = relations 
+? Projects.filter(item => relations.includes(item.id)) 
+: [];
+
+const video_limpios = video ? video : "";
+//console.log(video_limpios);
+
+---
+<ProjectsLayout title={name}>    
+    
+    <div class="w-full bg-center bg-cover h-[18rem] md:h-[28rem]" style={HeroImage}>
+        <div class="
+        flex 
+        items-center 
+        justify-center 
+        w-full h-full 
+        bg-gray-900/40">
+            <div class="text-center">
+                <h1 class="text-3xl font-semibold text-white lg:text-6xl">{name.toUpperCase()}</h1>
+                <div class="w-full px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-apsky rounded-md lg:w-auto hover:bg-regal-blue focus:outline-none focus:bg-blue-500">{tags.join(',')}</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container max-w-5xl mx-auto my-5 text-justify">
+        <article>
+            <h2 class="title-h2">{name.toUpperCase()}</h2>
+            <div class="flex flex-col items-center p-8">
+                <img class={` object-scale-down object-center w-32 h-32 rounded-md  ${logoOculto}`} src={logo} alt=""/>
+                <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">{slogan}</h1>
+                <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">{city} - {address}</p>
+                <div class="flex justify-center gap-4 items-center"> 
+                    <AmenitiesInteriors amenitiesInteriors={amenitiesInteriors}/>  
+                    <div class={`flex items-center mt-4 text-gray-700 dark:text-gray-200 ${areaOculto}`}>
+                        <Icon class="w-6 h-6 fill-current" name="cil:flip-to-back" /> <h1 class="px-2 text-sm">{area}</h1>
+                      </div>
+                </div>
+            </div>  
+
+            <section class="
+            flex 
+            flex-col 
+            items-center 
+            justify-between 
+            border-solid 
+            border-b-2 
+            border-slate-100 
+            mb-4
+            md:flex-row
+            md:mx-5">                
+                
+                <span class={`text-xl md:text-3xl text-slate-400 font-extrabold ${priceOculto}`}>                    
+                    Desde: {ToCurrency(price).split('.')[0]}
+                </span>
+            </section>            
+            <p class="mx-5">
+                {body}
+            </p>
+        </article>  
+        
+        <!-- Amenities Section -->
+
+        <section class="flex justify-center">
+            <div class="container px-2 py-4 mx-0">
+                <div class="
+                grid 
+                grid-cols-2 
+                gap-2 
+                mx-8
+                text-xs
+                text-center
+                place-content-center
+                md:grid-cols-3 
+                md:items-stretch                       
+                md:text-sm
+                lg:grid-cols-4 
+                 
+                ">
+                    {amenitiesExteriors.map((
+                        {
+                            name, quantity, icon
+                        }) => {
+                        return <Ameninities 
+                        name={name} 
+                        quantity={quantity}
+                        icon={icon}
+                        />
+                      })}
+                </div>
+            </div>
+        </section> 
+
+
+        
+
+
+        <section class="">
+            <div class="container px-6 py-10 mx-auto">
+                <h2 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white text-center">{images.length > 0 && "Galería".toUpperCase()}</h2>
+                <div class="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2 md:mt-16 md:grid-cols-3 lg:grid-cols-4">
+                    {images.map(image => {
+                        return (
+                        <div class="lg:flex">
+                            <a data-fslightbox="gallery" href={image}>
+                                <img class="
+                                transition 
+                                ease-in-out 
+                                delay-100                                 
+                                hover:scale-110                                
+                                hover:drop-shadow-2xl
+                                duration-300
+                                object-cover 
+                                w-full 
+                                h-56 
+                                rounded-lg 
+                                lg:w-56" src={image} alt="" />   
+                            </a>                        
+                        </div>);
+                    })}                    
+                </div>                
+            </div>
+
+            <div class={`${planosOculto} container px-6 py-10 mx-auto`}>
+                <h2 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white text-center">{planos_cantidad.length > 0 && "Planos".toUpperCase()}</h2>
+
+                <div class="w-full h-100">
+                    <a data-fslightbox="planos" href={PlanoMapa}>
+                        <img class="object-cover w-full h-auto rounded-lg " src={PlanoMapa} alt="" />   
+                    </a>                                           
+                </div>
+
+                <div class={`grid grid-cols-1 gap-6 mt-8 justify-items-center sm:grid-cols-2 md:mt-16 md:grid-cols-3 lg:grid-cols-${planos_cantidad.length}`}>
+                    {planos_cantidad.map(plano => {
+                        return (
+                        <div class="lg:flex">
+                            <a data-fslightbox="planos" href={plano}>
+                                <img class="object-cover w-full h-56 rounded-lg lg:w-56" src={plano} alt="" />   
+                            </a>   
+                                                
+                        </div>);
+                    })}                   
+                </div>                
+            </div>
+
+
+            <iframe class={`flex justify-center w-full px-4 h-96  rounded ${videoOculto}`}
+                src={video} title={name} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            </iframe>           
+        </section>
+
+
+        
+
+        <div class="flex flex-col mx-2 px-0 md:mx-6 md:px-3 lg:mx-12 lg:px-6 md:grid md:grid-cols-3 md:grid-flow-col gap-4">
+            <div class="row-span-3 my-4">
+                <div class="py-4">
+                    <h2 class="mt-2 text-xl font-semibold text-gray-800 text-center 
+                    md:text-2xl   
+                    lg:text-3xl
+                    dark:text-white">
+                        {"Quieres Saber más".toUpperCase()}
+                    </h2>
+                    <p class="font-medium text-center">Ponganse en Contácto</p>       
+        
+                    <p class="mt-3 text-gray-500 dark:text-gray-400 text-center">
+                        Nuestro equipo estará para resolver cualquier pregunta.
+                    </p>
+                </div>
+
+                <div class="flex flex-col mx-4 text-center  gap-12 md:grid-cols-2 lg:grid-cols-1">
+                    <div>
+                        <span class="inline-block p-3 text-regal-blue bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </span>
+    
+                        <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Nuestro equipo esta aquí para ayudarlo.</p>
+                        <p class="mt-2 text-sm">info@apinidos.com</p>
+                    </div>
+    
+                    <div>
+                        <span class="inline-block p-3 text-regal-blue bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                        </span>
+                        
+                        <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Oficina</h2>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Ven a nuestras oficina y dejanos atenderte personalmente.</p>
+                        <p class="mt-2 text-sm ">Calle 2 No 18 B 06 Pradomar, Puerto Colombia , Atlántico</p>
+                    </div>
+    
+                    <div>
+                        <span class="inline-block p-3 text-regal-blue bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                            </svg>
+                        </span>
+                        
+                        <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Telefono</h2>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Lunes-Viernes de 8:00am a 5:30pm, Sábados 9:00am a 12:00m</p>
+                        <p class="mt-2 text-sm ">5-3095593 - (310) 440 7029</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 mx-4 my-8">
+                <div class="overflow-hidden rounded-lg lg:col-span-2 h-auto">
+                    <h2 class="
+                    mt-2 
+                    text-xl 
+                    font-semibold 
+                    text-gray-800
+                    text-center 
+                    md:text-left 
+                    md:text-2xl 
+                    lg:text-3xl                     
+                    dark:text-white">
+                        {asesors?'Asesor(es)'.toUpperCase():''}
+                    </h2>
+                    <div class="flex flex-col justify-center mt-8  gap-4  sm:flex-row md:justify-between">
+                        {asesors_limpios.map(asesor =>{
+                                return(
+                                    <div class="flex justify-evenly items-center gap-x-2">
+                                        <img class="object-cover w-16 h-16 rounded-full" src={asesor.image} alt="">
+                                    
+                                        <div>
+                                            <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">{asesor.fullName}
+                                                <span class="block text-xs text-gray-500">{asesor.place}</span>
+                                                </h1>
+                                
+                                            <p class="text-base text-gray-500 dark:text-gray-400">{asesor.email}</p>
+                                        </div>
+                                    </div>
+                                    );
+                            })
+                        }                           
+                    </div>                    
+                </div>
+            </div>
+            <FormContact nameProject={name} client:load/>
+        </div>        
+        
+
+        <div class="row-span-2 col-span-2 mx-2 my-4 ">
+            <iframe src={mapa} width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"/>
+        </div>       
+
+        <section class="">            
+            <div class="container px-6 py-6 mx-auto">                   
+                <div class="
+                flex 
+                flex-col 
+                justify-center 
+                items-center 
+                mt-5 
+                mx-auto
+                
+                ">
+                    <h2 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white text-center my-5 ">
+                        {relations_limpios.length > 0 && 'Te puede Interesar'.toUpperCase()}
+                    </h2>
+                    <div class="
+                    flex 
+                    flex-col 
+                    gap-4  
+                    md:grid 
+                    md:grid-cols-2 
+                    md:gap-4 
+                    lg:flex 
+                    lg:flex-row">                            
+                            {relations_limpios.map(relation => {
+                                return(
+                                    <div class="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                                        <div class="px-4 py-2">
+                                            <h1 class="text-xl font-bold text-gray-800 uppercase dark:text-white">{relation.name}</h1>
+                                            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                                                {relation.slogan}
+                                            </p>
+                                            <div class="flex justify-center gap-4 ">                                                
+                                                <div class={`flex items-center mt-4 text-gray-700 dark:text-gray-200 ${areaOculto}`}>
+                                                    <Icon class="w-6 h-6 fill-current" name="cil:flip-to-back" /> <h1 class="px-2 text-sm">{relation.area}</h1>
+                                                </div>
+                                                <AmenitiesInteriors amenitiesInteriors={relation.amenitiesInteriors}/>
+                                            </div>
+                                        </div>
+
+                                        <img class="object-cover w-full h-48 mt-2" src={relation.imageMain} alt="">
+
+                                        <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
+                                            <h1 class="text-lg font-bold text-white">
+                                                {ToCurrency(relation.price).split('.')[0]}
+                                            </h1>
+                                            <a class="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none" href={`/proyectos/${relation.slug}/`}>Saber más</a>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>            
+        </section>
+    </main>
+    
+</ProjectsLayout>
+
+<script>
+    import '../../utils/fslightbox';
+</script>

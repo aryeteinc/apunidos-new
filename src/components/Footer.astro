@@ -1,0 +1,114 @@
+---
+import { Icon } from 'astro-icon';
+//import { Company } from '../data/Company';
+//import { FormContact } from './FormContact';
+
+const {Company} = Astro.props;
+
+const {
+  nameCompany,
+  addressCompany,
+  cityCompany,
+  stateCompany,
+  phoneCompany,
+  cellphoneCompany,
+  emailCompany
+  } = Company;
+
+
+---
+
+<footer class="py-10 w-full bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
+    <section class="flex flex-col justify-center items-center md:flex-row md:justify-around space-y-8">
+      <div class="text-center md:order-first md:w-1/3">
+        <div class="">
+          <div>             
+              <a href="/proyectos" class="block mt-2 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                  Proyectos
+              </a>
+              <a href="/acerca-de-nosotros" class="block mt-2 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                  Empresa
+              </a>
+              <a href="https://noticias.apunidos.com/" class="block mt-2 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                  Noticias
+              </a>
+              <a href="/politicas-de-tratamiento-de-datos" class="block mt-2 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                Legal
+            </a>
+
+            <a class="block text-indigo-500 py-2 px-4 rounded  font-semibold" href="https://apunidos.com/commerce/index.html">
+              Pagos    
+              
+          </a>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-center items-center text-center order-first md:w-1/3">
+          <p class="text-xl">{nameCompany}</p>  
+          <p>{ addressCompany }, { cityCompany }, { stateCompany }.</p>
+          <p>{phoneCompany}  –  {cellphoneCompany}</p>
+          <p>{emailCompany}</p>
+          <small>&copy; {new Date().getFullYear()} {nameCompany}</small>
+          
+      </div>
+
+      <div class="text-center md:w-1/3">
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup" class="md:w-1/2">
+          <form
+              action="https://apunidos.us7.list-manage.com/subscribe/post?u=3c8739b928faada613af4f541&amp;id=ea94b6e9b1"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+              class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll" class="text-center">
+                  <h2>Suscríbete a nuestro Newsletter</h2>
+                  <div class="indicates-required"><span class="asterisk"></span></div>
+                  <div class="mc-field-group text-left">
+                      <label for="mce-EMAIL">Email <span class="asterisk">*</span></label>
+                      <input type="email" value="" name="EMAIL" class="required email border border-regal-blue rounded-lg" id="mce-EMAIL"
+                      >
+                  </div>
+                  <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input
+                          type="text" name="b_3c8739b928faada613af4f541_ea94b6e9b1" tabindex="-1"
+                          value=""></div>
+                  <div class="clear">
+                    <input type="submit" value="Suscríbirse" name="subscribe"
+                          id="mc-embedded-subscribe" 
+                          class="button 
+                          bg-apsky 
+                          w-40 h-10 
+                          rounded 
+                          my-4
+                          transition ease-in-out delay-100 hover:text-apsky hover:bg-regal-blue    duration-300
+                          text-regal-blue  cursor-pointer ring-regal-blue ring-1"></div>
+              </div>
+          </form>
+      </div>
+      <!--End mc_embed_signup-->
+        <!-- <FormContact /> -->
+      </div>
+
+    </section>
+
+    <section class="flex justify-center gap-5"> 
+      <a href="https://www.facebook.com/APunidosconstru/" target="_blank">
+        <Icon class="w-6 h-6 fill-current" name="fa-brands:facebook-f"/> 
+      </a>     
+      <a href="https://api.whatsapp.com/send?phone=573104407029&amp;text=Cordial%20saludo%21"
+        target="_blank">
+        <Icon class="w-6 h-6 fill-current" name="fa-brands:whatsapp" />
+      </a>
+      <a href="https://www.youtube.com/channel/UC3NVZFgXcocHPMGGr3rrQIw" target="_blank">       
+        <Icon class="w-6 h-6 fill-current" name="fa-brands:youtube" />
+      </a>
+      <a href="https://www.instagram.com/apunidos_constructora/" target="_blank">
+        <Icon class="w-6 h-6 fill-current" name="fa-brands:instagram" /> 
+      </a>
+    </section>
+  </footer>

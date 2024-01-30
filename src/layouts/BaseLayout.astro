@@ -1,0 +1,64 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Fonts from '../components/Fonts.astro';
+import { Company } from "../data/Company";
+const {slogan} = Company;
+const {title} = Astro.props;
+ ---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logoweb.png" sizes="128x128" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <Fonts/>
+    <title>{title || "APUnidos SAS"}</title> 
+    <link rel="stylesheet" href="assets/css/Newsletter-Subscription-Form.css">  
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+      #mc_embed_signup {
+          background: rgb(7, 9, 8);
+          clear: left;
+          font: 14px Helvetica, Arial, sans-serif;
+      }
+
+      /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+  </style>
+  <script id="mcjs">
+      ! function (c, h, i, m, p) {
+          m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(
+              m, p)
+      }
+      (document, "script",
+          "https://chimpstatic.com/mcjs-connected/js/users/3c8739b928faada613af4f541/f472e1310bc7baa341a971ad1.js");
+  </script>
+ <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"7dc277cb26e794448ccc4088f35422e1"})});</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NM85LZ9');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Facebook Verication -->
+  <meta name="facebook-domain-verification" content="xym8vz7gruntcogp08f6nugihoopdk" />
+  <!-- End Facebook Verication -->
+  </head>
+  <body class="text-slate-600 bg-white dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800 dark:text-slate-400">   
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NM85LZ9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) --> 
+    <Header slogan={slogan}/>       
+    <slot />     
+    <main class="">  
+      <slot name="hero"/>
+      <slot name="properties"/>                
+    </main>     
+    <Footer Company={Company}/>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+---
+import Botton from './Botton.astro';
+//import TribecaIndex from '../img/tribeca-index.png';
+import TribecaIndex from '../img/proyectos/rdm/riviera-Casa frente .webp'
+//import Naturaleza from '../img/Naturaleza.png';
+import { Image, Picture } from '@astrojs/image/components';
+import MySwiper from "../components/MySwipper";
+import { Projects } from '../data/Projects';
+const imageMain = Projects.map( project => project.imageMain);
+const imageCarousel = Projects.filter( project => project.imageCarousel !== undefined);
+const ic = imageCarousel.map( imc => imc.imageCarousel);
+//console.log(ic);
+
+---
+
+<div class="overflow-hidden bg-white py-10 sm:py-32 dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+
+        <div class="lg:pr-8 lg:pt-4">
+          <div class="lg:max-w-lg">
+            <h2 class="title-h2 leading-8 tracking-tight ">
+              {"El Equilibrio Perfecto con la Naturaleza".toUpperCase()}
+            </h2>
+            <p class="mt-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-500 text-center">
+              Todos nuestros proyectos ubicados a pocos Kilometros de Barranquilla</p>
+            <p class="mt-6 text-base leading-8 text-gray-600 text-justify  dark:text-slate-400 md:text-lg">
+              La relación con la naturaleza es intrínseca al género humano, la evolución de los centros urbanos con una elevada densidad de la población ha ido debilitando progresivamente este lazo único.  En AP UNIDOS incorporamos LA NATURALEZA en todos nuestros proyectos de vivienda, con espacios al aire libre que restauran el vínculo con la naturaleza, considerado un privilegio, especialmente cerca de las grandes ciudades.
+              Todos Nuestros proyectos cuentan con comodidades que harán de tu hogar
+              algo único</p>
+              <div class="
+                my-6 
+                flex 
+                flex-col 
+                sm:flex-row 
+                sm:justify-center
+                sm:gap-2
+              dark:text-slate-400">
+                <p class="animation-amenities text-center">Piscinas</p>
+                <p class="animation-amenities text-center">Zonas Verdes</p>
+                <p class="animation-amenities text-center">Parqueaderos</p>
+                <p class="animation-amenities text-center">Gimnasios</p>
+                <p class="animation-amenities text-center">Canchas Deportivas</p>
+                <p class="animation-amenities text-center">Y mucho más</p>
+              </div>
+              <Botton text={"Fotografía Proyecto Riviera del Mar"} href={"/proyectos/riviera-del-mar"}/>          
+          </div>
+        </div>
+
+        <Image src={TribecaIndex} alt="Product screenshot" class="w-[48rem]  rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:max-w-none lg:-ml-0" width={2432} height={1442} />        
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-hidden bg-gradient-to-t from-gray-100 via-gray-50 to-transparent py-8 sm:py-32 dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <div class="lg:pr-8 lg:pt-4">
+          <div class="lg:max-w-lg">
+            <h2 class="title-h2 leading-8 tracking-tight text-lime-600">
+              {"Naturaleza y Mar".toUpperCase()}
+            </h2>
+            <p class="mt-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-500 text-center">
+              Todos nuestros proyectos ubicados a pocos Kilometros de Barranquilla</p>
+            <p class="mt-6 text-base leading-8 text-gray-600 text-justify  dark:text-slate-400 md:text-lg">
+              Hoy día las familias Colombianas tienen el deseo de vivir en las afueras de la ciudad, tener más espacio, un jardín, poder caminar en los alrededores y, sobre todo, mejorar su calidad de vida. Con APUNIDOS podras disfrutar los beneficios de un hogar comodo, con los espacios deseados, a pocos metros de la ciudad, y lo mejor de todo...disfrutar de la tranquilidad del campo, del aire puro de la naturaleza y estar cerca del mar.   
+            </p>                    
+          </div>
+        </div>
+        
+        <div class="h-full md:h-[29rem]" >
+          <MySwiper images={ic} client:load/>
+        </div>        
+        
+      </div>
+    </div>
+  </div>
+  
+

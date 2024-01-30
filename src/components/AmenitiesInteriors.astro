@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon';
+const {amenitiesInteriors} = Astro.props
+---
+
+<p>
+    {
+        amenitiesInteriors.map(amenities => {
+            return(
+                <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">    
+                    <Icon class="w-6 h-6 fill-current" name={amenities['icon']} />
+                    <h1 class="px-2 text-sm">{amenities['quantity']}</h1>                    
+                </div>
+               
+                )
+        })
+    }
+</p>
+

@@ -1,0 +1,51 @@
+---
+import Card from "./Card.astro";
+import { Projects } from '../data/Projects';
+
+const {title,filtro} = Astro.props;
+
+
+const newProjects = filtro
+                  ? Projects.filter((project) => project.tags.includes(filtro.join(',')))
+                  : Projects
+const grilla = newProjects.length < 3 ? newProjects.length : 3
+//console.log(grilla);
+
+---
+<>
+  <h2 class="py-6 title-h2">{ title.toUpperCase() }</h2>
+  <div class={`grid grid-cols-1 gap-2 mx-auto  py-8 px-2 md:px-0 content-center max-w-6xl justify-items-center 
+  md:grid-cols-${grilla} md:gap-3
+  lg:grid-cols-${grilla} lg:gap:4`}>  
+      {newProjects.map((
+        {
+          name,
+          tags,
+          price,
+          address,
+          city,
+          area,
+          slogan,
+          slug,
+          imageMain,
+          amenitiesInteriors,
+        }) => {
+        return <Card 
+        name={name} 
+        area={area}
+        slogan={slogan}
+        tags={tags} 
+        price={price}
+        address= {`${address} - ${city}`}
+        slug={slug}
+        imageMain={imageMain}
+        amenitiesInteriors={amenitiesInteriors}
+        />
+      })}
+  </div>
+</>
+
+
+
+
+
