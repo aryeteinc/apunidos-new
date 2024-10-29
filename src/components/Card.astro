@@ -4,16 +4,16 @@ import {ToCurrency} from '../utils/formatCurrency';
 import Sala from '../img/Sala.jpg';
 import AmenitiesInteriors from './AmenitiesInteriors.astro';
 
+import '../style.css';
 
-const { name, tags,price,address,area,slogan,slug,imageMain,amenitiesInteriors} = Astro.props
+
+const { name, tags,price,address,area,slogan,slug,imageMain,amenitiesInteriors,news} = Astro.props
 
 let areaOculto = area
 ? ''
 : 'hidden'
 
 let priceOculto = ToCurrency(price).split('.')[0] !== '$0' ? 'py-2' : 'hidden' 
-
-
 ---
 <div class="hidden max-w-sm rounded overflow-hidden shadow-lg bg-slate-50 
 transition duration-300 ease-in-out hover:scale-105 dark:bg-slate-800  dark:highlight-white/5 relative">
@@ -53,7 +53,7 @@ transition duration-300 ease-in-out hover:scale-105 dark:bg-slate-800  dark:high
         <h1 class={`text-lg font-semibold text-white ${priceOculto}`}>{ToCurrency(price).split('.')[0]}</h1>
     </div>
 
-    <div class="px-4 py-6 ">
+    <div class="px-4 pt-6 ">
         <h1 class="text-xl font-semibold text-gray-800 dark:text-white">{name.toUpperCase()}</h1>
         <section class="flex justify-between items-start">
           <small class="text-sm italic font-bold text-aplime flex-none">{slogan}</small>
@@ -66,14 +66,21 @@ transition duration-300 ease-in-out hover:scale-105 dark:bg-slate-800  dark:high
           <span class="font-md">{tags.join(',')}</span>          
         </p>
 
-        <div class="flex">
+        <div class="flex flex-col">
           <div class="flex items-center mt-2 text-gray-700 dark:text-gray-200">
             <Icon class="w-6 h-6 fill-current" name="cil:location-pin" />
-            <h1 class="px-2 text-sm">{address}</h1>
+            <h1 class="px-2 text-sm block">{address}</h1>
           </div>
+
+          {news && (
+          <div class="glassmorphism flex items-center   text-gray-700 dark:text-gray-200">
+            <p class="px-4 py-2 rounded-md">{news}</p>
+          </div>
+          )}
+
         </div>
 
-        <div class="flex justify-center gap-4 items-center">          
+        <div class="flex justify-center gap-4 items-center mb-4">          
           <AmenitiesInteriors amenitiesInteriors={amenitiesInteriors}/>         
 
           <div class={`flex items-center mt-4 text-gray-700 dark:text-gray-200 ${areaOculto}`}>

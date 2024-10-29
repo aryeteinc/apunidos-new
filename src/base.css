@@ -57,3 +57,32 @@
     hover:font-semibold  
     duration-300
 }
+
+.item-menu{
+    @apply
+    text-gray-700
+    md:text-gray-300 
+    transition-colors 
+    duration-300 
+    transform     
+    p-4    
+    font-bold
+    hover:text-gray-50 
+    hover:bg-gray-300/25 
+    dark:text-gray-200 
+    dark:hover:text-gray-400
+}
+
+.item-menu-left{
+    @apply
+    rounded-l-2xl
+}
+
+.item-menu-right{
+    @apply
+    rounded-r-2xl
+}
+
+/*
+relative bg-gradient-to-r from-sky-500 to-indigo-500 py-2 px-4 rounded text-white font-semibold
+*/

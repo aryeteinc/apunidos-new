@@ -1,7 +1,7 @@
 ---
 import "@fontsource/merriweather";
 import "@fontsource/nunito";
-import Header from '../components/Header.astro';
+import Headeralt from "../components/Headeralt.astro";
 import Footer from '../components/Footer.astro';
 import CardProperty from "../components/CardProperty.astro";
 
@@ -20,9 +20,30 @@ import '../base.css';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content={Astro.generator} />
     <title>{ title }</title>
+
+
+    <!-- Meta Pixel Code -->
+    <script is:inline>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2312383905751043');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2312383905751043&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+
 </head>
 <body class="text-slate-600 bg-white  dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800 dark:text-slate-400">
-    <Header slogan={slogan}/>
+    <Headeralt slogan={slogan}/>
     <slot/>
     
     <slot class="mx-24 ">        
@@ -31,6 +52,17 @@ import '../base.css';
         <CardProperty title="En Construcci&oacute;n" filtro={['En Construcción']}/>
         <CardProperty title="Finalizados" filtro={['Proyecto Finalizado']}/>
     </slot>    
-    <Footer Company={Company}/>    
+    <Footer Company={Company}/>  
+    <script is:inline>
+        (function(w,d,u){
+                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn.bitrix24.es/b29151189/crm/site_button/loader_3_p8nblh.js');
+    </script>
+    
+    
+
+
+    
 </body>
 </html>

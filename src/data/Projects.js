@@ -104,10 +104,11 @@ export const Projects = [
         name: 'Bosques de la Riviera',
         slug: 'bosques-de-la-riviera',
         slogan : "Eco Lotes Campestres",
-        price: 105000000,
+        news:'Etapa 2: Desde $68,000,000',
+        price: 68000000,
         city: 'Juan de Acosta',
         address: 'Km 26 via al mar',
-        area: '450 Mt2',        
+        area: '200 Mt2',        
         logo:'https://i.ibb.co/BqGyK5w/LOG-DE-PROYECTO.webp',
         tipo:"lotes",
         fase: "",
@@ -197,8 +198,8 @@ export const Projects = [
         asesors: [asesorsData.Vanesa, asesorsData.Sugey],
         relations: [2,3,4],
         video:'https://www.youtube.com/embed/OLU69tGD-3k',
-        Planos:['https://i.ibb.co/Vgq3pBD/ubicacion.webp' //Ubicación
-                ]
+        Planos:['https://i.ibb.co/xspxqs3/Bosques-de-la-Rivera-plano-en-blanco.jpg']
+        //https://i.ibb.co/xspxqs3/Bosques-de-la-Rivera-plano-en-blanco.jpg  https://i.ibb.co/Vgq3pBD/ubicacion.webp
     },
 
     //Altos  de la Riviera
@@ -210,9 +211,9 @@ export const Projects = [
         price: 130000000,
         city: 'Bajo Ostión - Tubará',
         address: 'Km 21 via al mar',
-        area: '300 - 650 Mt2',
+        area: 'Desde 300 Mt2',
         logo:'https://i.ibb.co/mqpkSvH/LOGO-DE-ALTOS-VECTOR.webp',
-        imageMain : 'https://i.ibb.co/XYhPHgy/foto5.webp',
+        imageMain : 'https://i.ibb.co/qkss1b5/ALtos-de-la-riviera-portal.jpg',
         imageMain2 : panoramica.src,
         amenitiesInteriors:[
             
@@ -342,7 +343,7 @@ export const Projects = [
         name: 'Altos del Morro',
         slug: 'altos-del-morro',
         slogan : "Reserva Campestre",
-        price: 130000000,
+        price: 120000000,
         city: 'Morros - Tubará',
         address: 'Km 22 via al mar',
         area: '300 Mt2',
@@ -473,17 +474,17 @@ export const Projects = [
         name: 'Morro House',
         slug: 'morro-house',
         slogan : "Condominios",
-        price: 564000000,
+        price: 620000000,
         city: 'Morros - Tubará',
         address: 'Sobre la via al Mar',
-        area: '112 Mt2',
+        area: '120 Mt2',
         logo: logoMorroHouse.src,
         imageMain : opcion3.src, //'https://i.ibb.co/0f25XS1/morroshouse1.webp',
         imageMain2 : portada.src,
         amenitiesInteriors:[
             {
                 name: "Habitaciones",
-                quantity: "2",
+                quantity: "3",
                 icon: bedrooms
             },
             {
@@ -743,10 +744,11 @@ export const Projects = [
         name: 'Riviera del Mar',
         slug: 'riviera-del-mar',
         slogan : "Reserva Campestre",
-        price: 490000000,
+        price: 520000000,
         city: 'Bajo Ostión - Tubará',
         address: 'Km 21 Via al Mar',
         area: '117 Mt2',
+        news:'Proyecto éxito en Venta, Primera etapa Finalizada',
         logo:'https://i.ibb.co/Thr1wPT/logo-rdm.webp',
         imageMain : 'https://i.ibb.co/s54hHcy/IMG-7821.webp',
         imageMain2 : 'https://i.ibb.co/s54hHcy/IMG-7821.webp',

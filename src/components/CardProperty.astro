@@ -9,8 +9,6 @@ const newProjects = filtro
                   ? Projects.filter((project) => project.tags.includes(filtro.join(',')))
                   : Projects
 const grilla = newProjects.length < 3 ? newProjects.length : 3
-//console.log(grilla);
-
 ---
 <>
   <h2 class="py-6 title-h2">{ title.toUpperCase() }</h2>
@@ -27,6 +25,7 @@ const grilla = newProjects.length < 3 ? newProjects.length : 3
           area,
           slogan,
           slug,
+          news,
           imageMain,
           amenitiesInteriors,
         }) => {
@@ -38,6 +37,7 @@ const grilla = newProjects.length < 3 ? newProjects.length : 3
         price={price}
         address= {`${address} - ${city}`}
         slug={slug}
+        news={news}
         imageMain={imageMain}
         amenitiesInteriors={amenitiesInteriors}
         />
