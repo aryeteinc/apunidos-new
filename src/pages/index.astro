@@ -14,4 +14,35 @@ import '../style.css';
 		<NewProjects/>
 		<!-- <Team/> -->
 	</section>	
+
+	<!-- Popup HTML -->
+	<div id="popup" class="popup hidden">
+		<div class="popup-content">
+				<span id="close-popup" class="close">&times;</span>
+				<img src="https://i.ibb.co/X8hfCpg/apunidos-10-years.jpg" alt="Popup Image" />
+		</div>
+	</div>
+
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('close-popup');
+
+    // Mostrar el popup (puedes ajustar esto según tus necesidades)
+    popup.classList.remove('hidden');
+
+    // Cerrar el popup cuando se hace clic en el botón de cerrar
+    closePopup.addEventListener('click', function () {
+      popup.classList.add('hidden');
+    });
+
+    // Cerrar el popup cuando se hace clic fuera del contenido del popup
+    window.addEventListener('click', function (event) {
+      if (event.target === popup) {
+        popup.classList.add('hidden');
+      }
+    });
+  });
+</script>
